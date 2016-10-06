@@ -72,6 +72,9 @@ extern "C" {
 #define _WIN32_WINNT 0x0600
 #endif
 #endif
+#if !defined(NOMINMAX) && defined(_MSC_VER)
+#	define NOMINMAX
+#endif
 #include <winsock2.h>
 #endif
 
