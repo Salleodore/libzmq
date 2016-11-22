@@ -851,6 +851,9 @@ int crypto_sign_open(u8 *m,u64 *mlen,const u8 *sm,u64 n,const u8 *pk)
 
 #ifdef ZMQ_HAVE_WINDOWS
 
+#if !defined(NOMINMAX) && defined(_MSC_VER)
+#	define NOMINMAX
+#endif
 #include <windows.h>
 #include <wincrypt.h>
 
